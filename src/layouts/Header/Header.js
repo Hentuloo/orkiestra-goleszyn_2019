@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import {Link} from 'gatsby'
+import Logo1 from '../../images/logo-icon.png'
+import Logo2 from '../../images/logo-osp.png'
 
 const navElements=[
     {
@@ -40,6 +42,7 @@ class Header extends Component {
         {listElements}
         </ul>
         <div className="switch" onClick={this.handleChangeActive}></div>
+        <div className="logo"><img src={Logo1} alt="Logo orkiestry"/><img src={Logo2} alt="Logo OSP"/></div>
         </nav>
          );
     }
