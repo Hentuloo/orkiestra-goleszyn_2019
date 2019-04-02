@@ -6,12 +6,12 @@ import Header from '../layouts/Header/Header'
 import Footer from '../layouts/Footer/Footer'
 
 //Import font: google-fonts-api
-// import WebFont from 'webfontloader';
-// WebFont.load({
-//   google: {
-//     families: ['Kalam','cursive']
-//   }
-// });
+import WebFont from 'webfontloader';
+WebFont.load({
+  google: {
+    families: ['Kalam','cursive']
+  }
+});
 
 const IndexPage = () => (
   <>
