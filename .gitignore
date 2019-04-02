@@ -1,3 +1,5 @@
+images
+/gatsby-config.js
 # Logs
 logs
 *.log
@@ -67,3 +69,4 @@ yarn-error.log
 .pnp.js
 # Yarn Integrity file
 .yarn-integrity
+gatsby-config.js

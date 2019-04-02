@@ -1,7 +1,32 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
+const path = require(`path`)
 
-// You can delete this file if you're not using it
+exports.createPages = async ({ graphql, actions }) => {
+  const { createPage } = actions
+  const galerySectionTemplate = path.resolve(`src/templates/galerySection.js`)
+ const galeryPages = await graphql(`{
+    gcms{
+      galerySectionses {
+        id
+        sectionTitle
+        url
+        sectionFirstPhoto{
+        url
+       }
+      sectionPhotos{
+       url
+        id
+        }
+      }
+    }
+  }      
+  `)
+  galeryPages.data.gcms.galerySectionses.forEach(section=>{
+    createPage({
+        path: section.url,
+        component:galerySectionTemplate,
+        context:{
+            data:section
+        }
+    })
+  })
+}

@@ -10,7 +10,7 @@ module.exports = {
           options: {
           typeName: "GCMS",
           fieldName: "gcms",
-          url: "https://api-euwest.graphcms.com/v1/cjtwruh9q7h4201cjqcmsfn16/master",
+          url: "",//there is my global url from gatsbyCMS
       },
   },
 
