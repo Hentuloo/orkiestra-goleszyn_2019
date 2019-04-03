@@ -7,6 +7,7 @@
     section
         flex-basis: 100%
         background-color: $bgc-footer
+        padding: 10px 0px
         h1
             margin: 10px 80px 2px 80px
             border-bottom: 2px black solid
@@ -55,4 +56,31 @@
             padding: 25px 20px
             img
                 max-width: 100%
+
+
+@media(min-width: $mobile-end-point)
+    .footer
+        font-size: 1.5em
+        section
+            flex-basis: 33.3333%
+            flex-grow: 1
+        div
+            width: 100%
+        section:nth-of-type(3)
+            div
+                flex-basis: 25%
+
+
+
+@media(min-width: $desktop-medium-end-point)
+    .footer
+        font-size: 1.3em
+        section
+            overflow: hidden
+        section:nth-of-type(3)
+            div
+                flex-basis: 50%
+                padding: 20px 10px
+                img
+                    max-width: 150px
 
