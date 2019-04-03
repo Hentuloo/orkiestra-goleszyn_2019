@@ -1,5 +1,6 @@
 .navigation
     font-size: 2.8em
+    height: 78px
     .logo
         display: none
     .switch
@@ -37,6 +38,7 @@
         padding: 0px
         top: 0%
         text-align: center
+        opacity: 0
         li
             flex-basis: 100%
             max-height: 16vh
@@ -74,6 +76,8 @@
             transform: rotate(-45deg) translate(-1px,6px)     
     ul
         display: flex
+        opacity: 1
+        animation: MenuOpacity 0.4s ease-in-out forwards
 @media(min-width: $mobile-end-point)
     .navigation
         font-size: 1.6em
@@ -87,6 +91,7 @@
             background-color: $bgc-menu-desktop
             box-sizing: border-box
             padding: 0px 20px
+            opacity: 1
             li
                 flex-basis: auto
                 flex-grow: 1
@@ -130,3 +135,10 @@
             li
                 a
                     line-height: 2.8em
+
+
+@keyframes MenuOpacity
+    0%
+        opacity: 0
+    100%
+        opacity: 1
