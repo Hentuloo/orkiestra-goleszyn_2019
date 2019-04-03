@@ -1,9 +1,13 @@
 import React from "react"
+import {StaticQuery,graphql} from "gatsby"
 import '../styles/index.sass'
 
 //layout: header with navigation and foother
 import Header from '../layouts/Header/Header'
 import Footer from '../layouts/Footer/Footer'
+
+//Component with simple block information (index.page)
+import BlockMainPage from '../components/BlockMainPage'
 
 //Import font: google-fonts-api
 import WebFont from 'webfontloader';
@@ -13,12 +17,38 @@ WebFont.load({
   }
 });
 
-const IndexPage = () => (
+const IndexPage = ({data:{gcms:{mainPages}}}) => {
+  console.log(mainPages)
+  const blocks = mainPages.map(e => <BlockMainPage key={e.pictureTitle} data={e}/>)
+  return(
   <>
   <Header/>
-   Strona główna
+  <article>
+    {blocks}
+  </article>
   <Footer/>
   </>
-)
+  )
+}
 
-export default IndexPage
+
+export default () => ( <
+  StaticQuery query = {
+    graphql `
+      {
+          gcms {
+             mainPages(orderBy: index_ASC) {
+               content
+               index
+               picture {
+                 url
+               }
+               pictureTitle
+             }
+          }
+      }
+    `
+  }
+  render = {
+    data => < IndexPage data = {data}/>}/>
+  )

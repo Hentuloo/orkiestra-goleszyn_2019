@@ -2,8 +2,6 @@ import React from 'react';
 import {StaticQuery,graphql} from "gatsby"
 
 const Footer = ({data:{gcms:{fotherPictureses,fotherLinkses}}}) => {
-
-    console.log(fotherPictureses)
     const WebsitesLinks=fotherLinkses.map(e=>(<a key={e.url} href={e.url}>{e.trescLiknku}</a>))
     const OrganisationsPhoto=fotherPictureses.map(e=>(<div key={e.picture.url}><img src={e.picture.url} alt={e.title}/></div>))
     return (
@@ -32,13 +30,13 @@ export default () => (
     query={graphql`
       {
           gcms {
-              fotherPictureses {
+              fotherPictureses(orderBy: index_ASC) {
                   title
                   picture {
                       url
                   }
               }
-              fotherLinkses {
+              fotherLinkses(orderBy: index_ASC) {
                   trescLiknku
                   url
               }
