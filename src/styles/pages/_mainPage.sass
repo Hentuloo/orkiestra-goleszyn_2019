@@ -3,20 +3,25 @@
     display: block
     width: 93%
     margin: 30px auto
-    div
+    div:nth-of-type(1)
         background-color: $article-bgc-content
         box-shadow: $article-shadow
         text-align: justify
+        box-sizing: border-box
+        padding: 15px 20px 
         margin: 15vh 0px 8vh 0px
     div:nth-of-type(2)
         position: relative
         width: 90%
         margin: 0px auto
         overflow: hidden
+        background-color: #382121
+        box-shadow: $article-shadow
         h1
-            font-size: 1em
+            font-size: 0.9em
             font-weight: 400
             text-align: center
+            width: 100%
             margin: 0px
             position: absolute 
             box-sizing: border-box
@@ -26,7 +31,44 @@
         img
             max-width: 100%
             position: relative
-            transition: transform 0.6s ease-in-out 
-    &:hover 
+            transition: transform 0.6s ease-in-out
+            
+    div:nth-of-type(2):hover
         img
             transform: scale(1.16)
+
+@media(min-width: $mobile-end-point)
+    .block-article
+        font-size: 2em
+        width: 80%
+        div:nth-of-type(1)
+            font-size: 0.8em
+            &:nth-of-type(odd)
+                transform: translate(8%,0%)
+        div:nth-of-type(2)
+            &:nth-of-type(even)
+                transform: translate(-8%,0%)
+
+@media(min-width: $desktop-medium-end-point)
+    .block-article
+        width: 95%
+        display: flex
+        margin: 10vw auto
+        div
+            flex-basis: 40%
+            box-sizing: border-box
+            margin-right: 100px
+            transform: none
+        div:nth-of-type(1)
+            &:nth-of-type(odd)
+                transform: none
+        div:nth-of-type(2)
+            &:nth-of-type(even)
+                transform: none   
+        div:nth-of-type(1)
+    .block-article:nth-of-type(odd)
+        flex-flow: row-reverse
+            
+        
+
+            

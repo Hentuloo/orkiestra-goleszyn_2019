@@ -1,8 +1,10 @@
 .navigation
     font-size: 2.8em
     height: 78px
+    
     .logo
         display: none
+        z-index: 98
     .switch
         position: fixed
         width: 50px
@@ -14,6 +16,7 @@
         border-top: 6px white solid
         border-radius: 10%
         cursor: pointer
+        z-index: 99
         &::after, 
         &::before
             content: ''
@@ -28,6 +31,7 @@
         &::before
             bottom: calc(50% + 3px)
     ul
+        z-index: 97
         display: none
         position: fixed
         background-color: $bgc-menu-mobile
