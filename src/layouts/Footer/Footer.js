@@ -1,8 +1,12 @@
 import React from 'react';
+import {StaticQuery,graphql, Link} from "gatsby"
 
+const Footer = ({data:{gcms:{fotherPictureses,fotherLinkses}}}) => {
 
-const Footer = () => {
-    return ( 
+    console.log(fotherPictureses)
+    const WebsitesLinks=fotherLinkses.map(e=>(<a key={e.url} href={e.url}>{e.trescLiknku}</a>))
+    const OrganisationsPhoto=fotherPictureses.map(e=>(<div key={e.picture.url}><img src={e.picture.url} alt={e.title}/></div>))
+    return (
         <footer className="footer">
             <section>
                 <h1>Orkiestra Goleszyn</h1>
@@ -12,15 +16,37 @@ const Footer = () => {
             </section>
             <section>
                 <h1>Powiązane strony:</h1>
-                <a href="#jakiś link">Młodzieżowa orkiestra G</a>
+                {WebsitesLinks}
             </section>
             <section>
                 <h1>Organizacje:</h1>
-                <img src="" alt=""/>
+                {OrganisationsPhoto}
             </section>
             <div>Wszystkie prawa zastrzeżone. Copyright by OSP Goleszyn</div>
         </footer>
      );
 }
- 
-export default Footer;
+
+export default () => (
+  <StaticQuery
+    query={graphql`
+      {
+          gcms {
+              fotherPictureses {
+                  title
+                  picture {
+                      url
+                  }
+              }
+              fotherLinkses {
+                  trescLiknku
+                  url
+              }
+          }
+      }
+    `}
+    render={data => <Footer data={data} />}
+  />
+)
+
+// export default Footer;
