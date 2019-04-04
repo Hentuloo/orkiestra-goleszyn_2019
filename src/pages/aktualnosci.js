@@ -35,8 +35,7 @@ export default () => ( <
     graphql `
       {
           gcms {
-              newses {
-                  index
+              newses(orderBy: index_ASC) {
                   shortTitle
                   status
                   data
