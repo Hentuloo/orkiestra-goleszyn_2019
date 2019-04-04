@@ -1,0 +1,67 @@
+.newsPage
+    font-size: 1.3em
+    width: 90%
+    margin: 0px auto
+    display: flex
+    flex-wrap: wrap
+    aside
+        margin: 0px auto 10vh auto
+        width: 300px
+        span
+            margin: 0px auto
+            width: 100%
+
+
+.newsBlocks
+    width: 100%
+    margin: 0px auto 10vh auto
+    border: 1px $bgc-news solid
+    box-sizing: border-box
+    h1
+        width: 100%
+        margin: 0px
+        padding: 5px 20px
+        box-sizing: border-box
+        background-color: $bgc-news
+        color: black
+    section
+        padding: 15px 10px
+        border-bottom: 2px $bgc-news dashed
+        box-sizing: border-box
+        width: 100%
+        display: flex
+        position: relative
+        &:last-of-type
+            border-bottom: none
+        div:nth-of-type(1)
+            flex-basis: 40%
+            display: flex
+            flex-direction: column
+            justify-content: center
+            margin: 10px 0px
+            span
+                position: absolute
+                font-size: 0.8em
+                bottom: 0%
+        div:nth-of-type(2)
+            flex-basis: 60%
+            h1
+                color: $bgc-news
+                background-color: transparent
+                font-size: 1.1em
+                width: auto
+                padding: 0px 20px
+            p
+                font-size: 0.9em
+                margin: 0px
+                padding: 5px 10px
+        img
+            max-width: 100%
+        div.newsInformationOnly
+            flex-basis: 100%
+            h1
+                color: $bgc-news
+                background-color: transparent
+
+
+

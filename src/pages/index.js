@@ -18,7 +18,6 @@ WebFont.load({
 });
 
 const IndexPage = ({data:{gcms:{mainPages}}}) => {
-  console.log(mainPages)
   const blocks = mainPages.map(e => <BlockMainPage key={e.pictureTitle} data={e}/>)
   return(
   <>
