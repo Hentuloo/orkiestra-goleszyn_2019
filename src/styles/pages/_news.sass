@@ -56,12 +56,29 @@
                 margin: 0px
                 padding: 5px 10px
         img
-            max-width: 100%
+            width: 100%
+            max-width: 300px
         div.newsInformationOnly
             flex-basis: 100%
             h1
                 color: $bgc-news
                 background-color: transparent
 
+@media(min-width: $mobile-end-point)
+    .newsPage
+        margin-top: 10vh
+        flex-wrap: nowrap
 
-
+        .newsBlocks
+            margin-left: 50px
+@media(min-width: $desktop-medium-end-point)
+    .newsPage
+        aside
+            align-self: center
+        .newsBlocks
+            div:nth-of-type(2)
+                flex-basis: 70%
+            div:nth-of-type(1)
+                flex-basis: 30%
+            div.newsInformationOnly
+                flex-basis: 100%
