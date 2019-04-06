@@ -8,6 +8,8 @@ import Footer from '../layouts/Footer/Footer'
 
 //Component with simple block information (index.page)
 import BlockMainPage from '../components/BlockMainPage'
+//component with baner photo
+import MainPicture from '../components/MainPicture'
 
 //Import font: google-fonts-api
 import WebFont from 'webfontloader';
@@ -22,6 +24,7 @@ const IndexPage = ({data:{gcms:{mainPages}}}) => {
   return(
   <>
   <Header/>
+  <MainPicture/>
   <article>
     {blocks}
   </article>

@@ -1,0 +1,35 @@
+.achivmentPage
+    font-size: 1.1em
+    display: flex
+    flex-wrap: wrap
+    width: 95%
+    margin: 20px auto
+    text-align: center
+    color: white
+    .important
+        flex-basis: 100% 
+        background-color: $achivment-block-bgc
+        h1
+            margin: 0px
+            background-color: $achivment-h1-bgc
+        div
+            padding: 7px 14px
+    .unimportant
+        margin: 20px 7px
+        padding:  4px 8px
+        border-left: 4px $achivment-block-bgc solid
+        position: relative
+        padding-top: 1em
+        span
+            display: inline-block
+            position: absolute
+            top: -1em
+            left: 50%
+            transform: translate(-50%,0%)
+            max-width: 80% 
+            padding: 2px 15px
+            border-radius: 40% 40% 0% 0%
+            background-color: $achivment-h1-bgc
+
+@media(min-width: $mobile-end-point)
+    .achivmentPage
