@@ -1,0 +1,55 @@
+.galery-section
+    width: 95%
+    display: flex
+    flex-wrap: wrap
+    margin: 40px auto
+    align-items: center
+    div
+        flex-basis: calc(50% - 20px)
+        margin: 10px
+        img
+            max-width: 100%
+            cursor: pointer
+
+.galery-back-link
+    font-size: 3em
+    display: block
+    position: fixed
+    width: 100%
+    bottom: 0% 
+    background-color: $gallery-btn-bgc        
+    text-align: center
+    overflow: hidden
+    &::after
+        content: ''
+        position: absolute
+        width: 100%
+        height: 100%
+        top: 0px
+        left: 0px
+        background-image: url('../images/powrot.png')
+        background-size: auto 100%
+        z-index: -1
+        opacity: 0.7
+    a
+        font-weight: 700
+        display: block
+        width: 100%
+        padding: 10px 0px
+        text-decoration: none
+        color: white
+
+@media(min-width: $mobile-end-point)
+    .galery-section 
+        div
+            flex-basis: calc(33.333% - 20px)
+    .galery-back-link
+        position: relative
+        z-index: 1
+        &::after
+            z-index: -1
+@media(min-width: $desktop-medium-end-point)
+    .galery-section
+        div
+            flex-basis: calc(25% - 20px)
+

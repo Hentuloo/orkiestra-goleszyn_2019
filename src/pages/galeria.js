@@ -39,8 +39,9 @@ const Galery = () =>(
     </Link>)
     return(<>
     <Header/>
-    Galeria:
+    <article className="galery-link">
     {Links}
+    </article>
     <Footer/>
     </>)}}
 />
