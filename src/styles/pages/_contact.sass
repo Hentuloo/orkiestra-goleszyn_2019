@@ -1,0 +1,42 @@
+.contact
+    font-size: 1.3em
+    width: 70%
+    margin: 0px auto
+    display: flex
+    flex-wrap: wrap
+    text-align: center
+    section
+        display: block
+        flex-basis: 100%
+        min-height: 30vh
+        margin: 5vh auto
+        background-color: $contact-bgc
+        border-radius: 4%
+        position: relative
+        h1
+            width: 100%
+            background-color: black
+            margin: 5vh 0px 2vh 0px
+            padding: 4px 10px
+            box-sizing: border-box
+        div
+            margin: 3vh 10px
+            padding: 10px
+            background-color: $contact-bgc
+            border-radius: 15%
+@media(min-width: $mobile-end-point)
+    .contact
+        width: 90%
+        section
+            flex-basis: calc(50% - 10vh)
+@media(min-width: $desktop-medium-end-point)
+    .contact
+        font-size: 1.0em
+        width: 99%
+        section
+            flex-shrink: 
+            min-height: 40vh
+            box-sizing: border-box
+            margin: 5vh 1vw
+            flex-basis: calc(25% - 2vw)
+
