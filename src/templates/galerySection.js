@@ -36,8 +36,8 @@ class galerySectionTemplate extends Component {
   {Images}
   </div>
   {this.state.active&&(
-  <div className="image-scoupe">
-  <img onClick={this.handleScopeImage} src={this.state.img} alt="Orkiestra Goleszyn zdjęcie"/>
+  <div className="image-scoupe" onClick={this.handleScopeImage}>
+  <img src={this.state.img} alt="Orkiestra Goleszyn zdjęcie"/>
   </div>)}
   <div className="galery-back-link">
   <Link to='/galeria'>POWRÓT</Link>
