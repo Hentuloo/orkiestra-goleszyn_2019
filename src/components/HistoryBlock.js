@@ -2,7 +2,6 @@ import React from 'react';
 
 
 const HistoryBlock = ({data}) => {
-    console.log(data)
     if(data.photo){
     return ( 
         <section>

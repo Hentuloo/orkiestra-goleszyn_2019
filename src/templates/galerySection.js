@@ -18,8 +18,6 @@ class galerySectionTemplate extends Component {
     }
   }
   render() { 
-    console.log(this.state)
-
     const data = this.props.pageContext.data
     const Images = data.sectionPhotos.map(e=>(
     <div 
@@ -42,30 +40,9 @@ class galerySectionTemplate extends Component {
   <div className="galery-back-link">
   <Link to='/galeria'>POWRÓT</Link>
   </div>
-  < Footer / >
+  < Footer/>
   </>
 )
   }
 }
- 
-export default galerySectionTemplate;
-
-// const galerySectionTemplate = ({pageContext:{data}})=>{
-
-//   const handleScopeImage=()=>{}
-    
-//     const Images = data.sectionPhotos.map(e=><div onClick={this.handleScopeImage} key={e.id}><img  alt={data.sectionTitle} src={e.url}/></div>)
-//     return(
-//   <>
-//   <Header/>
-//   <div className="galery-section">
-//   {Images}
-//   </div>
-//   <div className="galery-back-link">
-//   <Link to='/galeria'>POWRÓT</Link>
-//   </div>
-//   <Footer/>
-//   </>
-// )
-// }
-// export default galerySectionTemplate
+ export default galerySectionTemplate;

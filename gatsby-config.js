@@ -6,6 +6,14 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        google: {
+          families: ['Kalam', 'cursive']
+        }
+      }
+    },
+    {
       resolve: "gatsby-source-graphql",
           options: {
           typeName: "GCMS",

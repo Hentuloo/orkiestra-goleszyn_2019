@@ -11,13 +11,6 @@ import BlockMainPage from '../components/BlockMainPage'
 //component with baner photo
 import MainPicture from '../components/MainPicture'
 
-//Import font: google-fonts-api
-import WebFont from 'webfontloader';
-WebFont.load({
-  google: {
-    families: ['Kalam','cursive']
-  }
-});
 
 const IndexPage = ({data:{gcms:{mainPages,mainPagePictures}}}) => {
   const blocks = mainPages.map(e => <BlockMainPage key={e.pictureTitle} data={e}/>)
