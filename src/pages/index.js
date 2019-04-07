@@ -19,12 +19,12 @@ WebFont.load({
   }
 });
 
-const IndexPage = ({data:{gcms:{mainPages}}}) => {
+const IndexPage = ({data:{gcms:{mainPages,mainPagePictures}}}) => {
   const blocks = mainPages.map(e => <BlockMainPage key={e.pictureTitle} data={e}/>)
   return(
   <>
   <Header/>
-  <MainPicture/>
+  <MainPicture data={mainPagePictures}/>
   <article>
     {blocks}
   </article>
@@ -38,16 +38,22 @@ export default () => ( <
   StaticQuery query = {
     graphql `
       {
-          gcms {
-             mainPages(orderBy: index_ASC) {
-               content
-               index
-               picture {
-                 url
-               }
-               pictureTitle
-             }
+        gcms {
+          mainPages(orderBy: index_ASC) {
+            content
+            index
+            picture {
+              url
+            }
+            pictureTitle
           }
+          mainPagePictures(orderBy: index_ASC) {
+            width
+            photo {
+              url
+            }
+          }
+        }
       }
     `
   }
