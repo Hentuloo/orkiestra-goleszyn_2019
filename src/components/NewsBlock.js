@@ -6,7 +6,7 @@ const NewsBlock = ({data}) => {
         <section>
             <div>
             <img src={data.picture.url} alt={data.shortTitle}/>
-            <span>{(data.data.slice(0, 10))}</span>
+            {data.data&&<span>{(data.data.slice(0, 10))}</span>}
             </div>
             <div>
                 <h1>{data.shortTitle}</h1>
@@ -20,7 +20,7 @@ const NewsBlock = ({data}) => {
             <div className="newsInformationOnly">
                 <h1>{data.shortTitle}</h1>
                 <p>{data.content}</p>
-                <span>{(data.data.slice(0, 10))}</span>
+                {data.data&&<span>{(data.data.slice(0, 10))}</span>}
             </div>
         </section>
     );}

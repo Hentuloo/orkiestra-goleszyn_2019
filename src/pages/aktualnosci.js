@@ -11,6 +11,7 @@ import NewsBlock from '../components/NewsBlock'
 
 const News = ({data:{gcms:{newses}}}) => {
   const newsBlocks = newses.map(e=><NewsBlock key={e.index} data={e}/>)
+  
     return ( 
         <>
   <Header/>
@@ -37,7 +38,6 @@ export default () => ( <
           gcms {
               newses(orderBy: index_ASC) {
                   shortTitle
-                  status
                   data
                   content
                   picture {
