@@ -2,7 +2,8 @@ import React from 'react';
 
 const ContactBlock = ({data}) => {
     return ( 
-        <section style={{backgroundImage:`url(${data.bgcIcon.url})`}}>
+        <section>
+            <div className="contact-image"><img src={data.bgcIcon.url} alt=""/></div>
             <h1>{data.title}</h1>
             <div>{data.content}</div>
         </section>
