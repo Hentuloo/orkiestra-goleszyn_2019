@@ -9,34 +9,38 @@ import Footer from "../layouts/Footer/Footer"
 import ContactBlock from "../components/ContactBlock"
 
 const Contact = ({
-	data: {
-		gcms: { contacts },
-	},
+  data: {
+    gcms: { contacts },
+  },
 }) => {
-	const blocks = contacts.map(e => <ContactBlock key={e.title} data={e} />)
-	return (
-		<>
-			<Header />
-			<article className="contact">{blocks}</article>
-			<Footer />
-		</>
-	)
+  const blocks = contacts.map(e => <ContactBlock key={e.title} data={e} />)
+  return (
+    <>
+      <Header
+        title="Kontakt"
+        about="skontaktuj się z orkiestrą Goleszyn"
+        keywords="Kontakt Orkiestra Golesznyn"
+      />
+      <article className="contact">{blocks}</article>
+      <Footer />
+    </>
+  )
 }
 export default () => (
-	<StaticQuery
-		query={graphql`
-			{
-				gcms {
-					contacts {
-						title
-						content
-						bgcIcon {
-							url
-						}
-					}
-				}
-			}
-		`}
-		render={data => <Contact data={data} />}
-	/>
+  <StaticQuery
+    query={graphql`
+      {
+        gcms {
+          contacts {
+            title
+            content
+            bgcIcon {
+              url
+            }
+          }
+        }
+      }
+    `}
+    render={data => <Contact data={data} />}
+  />
 )
