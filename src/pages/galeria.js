@@ -12,11 +12,7 @@ const Galery = () => (
     query={graphql`
       {
         allSitePage(
-          filter: {
-            component: {
-              eq: "F:/Main_code-218/GraphQL/4 Orkiestra-Goleszyn/orkiestra-goleszyn/src/templates/galerySection.js"
-            }
-          }
+          filter: { component: { regex: "/templates/galerySection.js/" } }
         ) {
           edges {
             node {
