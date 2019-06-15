@@ -33,7 +33,7 @@ class galerySectionTemplate extends Component {
         />
         <div className="galery-section">{Images}</div>
         {this.state.active && (
-          <div className="image-scoupe" onClick={this.handleScopeImage}>
+          <div className="image-scoupe" onClick={() => this.handleScopeImage()}>
             <img src={this.state.img} alt="Orkiestra Goleszyn zdjęcie" />
           </div>
         )}
