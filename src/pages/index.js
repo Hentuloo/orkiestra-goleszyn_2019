@@ -1,6 +1,5 @@
 import React from "react"
 import { StaticQuery, graphql } from "gatsby"
-import "../styles/index.sass"
 
 //layout: header with navigation and foother
 import Header from "../layouts/Header/Header"
